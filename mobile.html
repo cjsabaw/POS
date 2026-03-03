@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Kuromi Mobile Scanner</title>
+    <link rel="stylesheet" href="style.css"> <style>
+        body { overflow: auto; padding: 10px; }
+        #reader { 
+            width: 100%; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            border: 3px solid var(--kuromi-purple) !important;
+        }
+        .mobile-cart {
+            margin-top: 20px;
+            background: var(--kuromi-black);
+            padding: 15px;
+            border-radius: 20px;
+            border: 2px solid var(--kuromi-pink);
+        }
+    </style>
+</head>
+<body>
+    <h2 style="color: var(--kuromi-pink); text-align: center;">Scan Barcode</h2>
+    
+    <div id="reader"></div>
+
+    <div class="mobile-cart">
+        <h3>Current Bag</h3>
+        <div id="cart-items"></div>
+        <hr style="border: 1px dashed var(--kuromi-purple)">
+        <div class="row">
+            <strong>Total: </strong>
+            <span id="total" style="color: var(--kuromi-pink); font-size: 1.5rem;">₱0.00</span>
+        </div>
+        <button class="pay-button" onclick="checkout()" style="margin-top:15px;">Seal Deal</button>
+    </div>
+
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="mobile.js"></script>
+</body>
+</html>
